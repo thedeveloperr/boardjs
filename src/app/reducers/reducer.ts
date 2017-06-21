@@ -18,17 +18,18 @@ export function reducer(state = initialState, action: list.Actions | card.Action
         board: [...state.board, action.payload]
       };
     case list.REMOVE: {
-      let boardArr = [...state.board];
-      boardArr.splice(action.payload, 1);
       return {
-        board: [...boardArr]
+        board: state.board.filter(list=> list.id!=action.payload)
       };
     }
     case list.UPDATE: {
-      let boardArr = [...state.board];
-      boardArr.splice(action.payload.position, 1, action.payload);
       return {
-        board: [...boardArr]
+        board: state.board.map(list=> {
+          if(list.id == action.payload.id ){
+            return action.payload
+          }
+          return list;
+        })
       };
     }
     case list.CHANGE_POSITION: {

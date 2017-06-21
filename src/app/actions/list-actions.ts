@@ -21,7 +21,7 @@ export class AddAction implements Action {
 export class RemoveAction implements Action {
   readonly type = REMOVE;
 
-  constructor(public payload: number) { }
+  constructor(public payload: string) { }
 }
 
 export interface ChangePositionPayloadModel{
