@@ -4,6 +4,7 @@ import { CardModel } from '../models';
 export const ADD = '[Card] Add';
 export const REMOVE = '[Card] Remove';
 export const CHANGE_POSITION = '[Card] Change Position';
+export const CHANGE_BOARD = '[Card] Change Board';
 export const UPDATE = '[Card] Update'
 
 /**
@@ -18,7 +19,7 @@ export class AddAction implements Action {
   constructor(public payload: CardModel) { }
 }
 
-export interface RemoveActionPayloadModel{
+export interface RemoveActionPayloadModel {
   position: number;
   parentId: string;
 }
@@ -29,15 +30,28 @@ export class RemoveAction implements Action {
   constructor(public payload: RemoveActionPayloadModel) { }
 }
 
-export interface ChangePositionPayloadModel{
+export interface ChangePositionPayloadModel {
+  parentId: string;
   oldPosition: number;
   newPosition: number;
+}
+
+export interface ChangeBoardPayloadModel{
+  oldParentId: string;
+  position: number;
+  newParentId: string;
 }
 
 export class ChangePositionAction implements Action {
   readonly type = CHANGE_POSITION;
 
   constructor(public payload: ChangePositionPayloadModel) { }
+}
+
+export class ChangeBoardAction implements Action {
+  readonly type = CHANGE_BOARD;
+
+  constructor(public payload: ChangeBoardPayloadModel) { }
 }
 
 export class UpdateAction implements Action {
@@ -54,4 +68,5 @@ export type Actions
   = UpdateAction
   | AddAction
   | RemoveAction
-  | ChangePositionAction;
+  | ChangePositionAction
+  | ChangeBoardAction;
