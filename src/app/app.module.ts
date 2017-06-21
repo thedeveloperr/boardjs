@@ -15,6 +15,9 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -26,6 +29,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
+
 
 
 import '../styles/styles.scss';
@@ -59,7 +63,9 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
+    StoreModule.provideStore({ appState: reducer })
+
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

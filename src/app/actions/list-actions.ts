@@ -18,15 +18,10 @@ export class AddAction implements Action {
   constructor(public payload: ListModel) { }
 }
 
-export interface RemoveActionPayloadModel{
-  position: number;
-}
-
-
 export class RemoveAction implements Action {
   readonly type = REMOVE;
 
-  constructor(public payload: string) { }
+  constructor(public payload: number) { }
 }
 
 export interface ChangePositionPayloadModel{
