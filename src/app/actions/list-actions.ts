@@ -18,7 +18,7 @@ export class AddAction implements Action {
   constructor(public payload: ListModel) { }
 }
 
-interface RemoveActionPayloadModel{
+export interface RemoveActionPayloadModel{
   position: number;
 }
 
@@ -29,7 +29,7 @@ export class RemoveAction implements Action {
   constructor(public payload: string) { }
 }
 
-interface ChangePositionPayloadModel{
+export interface ChangePositionPayloadModel{
   oldPosition: number;
   newPosition: number;
 }

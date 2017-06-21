@@ -18,7 +18,7 @@ export class AddAction implements Action {
   constructor(public payload: CardModel) { }
 }
 
-interface RemoveActionPayloadModel{
+export interface RemoveActionPayloadModel{
   position: number;
   parentId: string;
 }
@@ -29,7 +29,7 @@ export class RemoveAction implements Action {
   constructor(public payload: RemoveActionPayloadModel) { }
 }
 
-interface ChangePositionPayloadModel{
+export interface ChangePositionPayloadModel{
   oldPosition: number;
   newPosition: number;
 }
