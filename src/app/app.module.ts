@@ -32,7 +32,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomePageComponent } from './home-page';
 import { NoContentPageComponent } from './no-content-page';
 import { BoardComponent } from './components/board';
-import { MdToolbarModule,MdInputModule, MdIconModule, MdDialogModule, MdButtonModule } from '@angular/material';
+import { MdCardModule, MdToolbarModule,MdInputModule, MdIconModule, MdDialogModule, MdButtonModule } from '@angular/material';
 import { COMPONENTS, ENTRY_COMPONENTS } from './components';
 import { ListRelatedService } from './services';
 import '../styles/styles.scss';
@@ -79,6 +79,7 @@ type StoreType = {
     MdDialogModule,
     MdButtonModule,
     MdInputModule,
+    MdCardModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     StoreModule.provideStore({ appState: reducer })
 

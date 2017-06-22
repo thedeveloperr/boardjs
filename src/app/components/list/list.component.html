@@ -1,12 +1,16 @@
 <div class="list">
   <div fxLayoutAlign="start start" fxLayout='column'>
     <md-toolbar fxFlex>
-      <span>{{listData.name}}</span>
+      <div style="width:200px;overflow:hidden;">{{listData.name}}</div>
       <span fxFlex="1 1 auto"></span>
-      <button md-button (click)="updateListAction()"><md-icon>mode_edit</md-icon></button>
-      <button md-button (click)="deleteListAction()"><md-icon>delete</md-icon></button>
+      <button class="list-action-btn" md-button (click)="updateListAction()"><md-icon>mode_edit</md-icon></button>
+      <button class="list-action-btn" md-button (click)="deleteListAction()"><md-icon>delete</md-icon></button>
+      <button class="list-action-btn" md-button (click)="addCardAction()"><md-icon>add</md-icon></button>
     </md-toolbar>
     <div fxFlex>
+      <div class="card-wrapper" *ngFor="let card of listData.content">
+        <app-card [cardData]="card"></app-card>
+      </div>
     </div>
   </div>
 </div>
