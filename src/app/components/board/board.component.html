@@ -1,6 +1,6 @@
 <div class="shadow-board">
-<button md-mini-fab (click)=addListDialog()><md-icon>add</md-icon></button>
-<div class="list-wrapper" *ngFor="let list of appState.board">
-  <app-list [listData]="list" ></app-list>
-</div>
+  <button md-mini-fab (click)=addListDialog()><md-icon>add</md-icon></button>
+  <div class="list-wrapper" *ngFor="let list of appState.board">
+    <app-list [listData]="list"></app-list>
+  </div>
 </div>

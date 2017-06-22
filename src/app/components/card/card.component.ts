@@ -3,7 +3,7 @@ import { MdDialog } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../../reducers';
-import * as cardActions from '../../actions/card-actions'
+import * as cardActions from '../../actions/card-actions';
 import { CardModel } from '../../models';
 import { EditCardDialogboxComponent } from './edit-card-dialogbox';
 
@@ -13,25 +13,26 @@ import { EditCardDialogboxComponent } from './edit-card-dialogbox';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() cardData: CardModel;
+  @Input() public cardData: CardModel;
   constructor(private _store: Store<State>, public editDialog: MdDialog) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //
   }
 
-  deleteCardAction() {
+  public deleteCardAction() {
     this._store.dispatch(new cardActions.RemoveAction({
       position: this.cardData.position,
       parentId: this.cardData.parentListId
     }));
   }
 
-  updateCardAction() {
+  public updateCardAction() {
     let dialogRef = this.editDialog.open(EditCardDialogboxComponent);
     dialogRef.componentInstance.oldContent = this.cardData.content;
-    dialogRef.afterClosed().subscribe(data => {
+    dialogRef.afterClosed().subscribe((data) => {
       if (data) {
-        let newCardData = Object.assign({}, this.cardData)
+        let newCardData = Object.assign({}, this.cardData);
         newCardData.content = data.content;
         this._store.dispatch(new cardActions.UpdateAction(newCardData));
       }

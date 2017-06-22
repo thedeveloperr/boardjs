@@ -13,6 +13,6 @@ div.shadow-board {
   overflow-x: auto;
 }
 
-.shadow-board *{
+.shadow-board * {
   white-space: normal;
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
 
-
 @Component({
   selector: 'app-add-card-dialogbox',
   templateUrl: './add-card-dialogbox.component.html',
@@ -13,7 +12,8 @@ export class AddCardDialogboxComponent implements OnInit {
     //
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //
   }
 
 }

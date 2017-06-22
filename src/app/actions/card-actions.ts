@@ -5,17 +5,10 @@ export const ADD = '[Card] Add';
 export const REMOVE = '[Card] Remove';
 export const CHANGE_POSITION = '[Card] Change Position';
 export const CHANGE_LIST = '[Card] Change List';
-export const UPDATE = '[Card] Update'
+export const UPDATE = '[Card] Update';
 
-/**
- * Every action is comprised of at least a type and an optional
- * payload. Expressing actions as classes enables powerful
- * type checking in reducer functions.
- *
- * See Discriminated Unions: https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions
- */
 export class AddAction implements Action {
-  readonly type = ADD;
+  public readonly type = ADD;
   constructor(public payload: CardModel) { }
 }
 
@@ -25,7 +18,7 @@ export interface RemoveActionPayloadModel {
 }
 
 export class RemoveAction implements Action {
-  readonly type = REMOVE;
+  public readonly type = REMOVE;
 
   constructor(public payload: RemoveActionPayloadModel) { }
 }
@@ -36,26 +29,26 @@ export interface ChangePositionPayloadModel {
   newPosition: number;
 }
 
-export interface ChangeListPayloadModel{
+export interface ChangeListPayloadModel {
   oldParentId: string;
   position: number;
   newParentId: string;
 }
 
 export class ChangePositionAction implements Action {
-  readonly type = CHANGE_POSITION;
+  public readonly type = CHANGE_POSITION;
 
   constructor(public payload: ChangePositionPayloadModel) { }
 }
 
 export class ChangeListAction implements Action {
-  readonly type = CHANGE_LIST;
+  public readonly type = CHANGE_LIST;
 
   constructor(public payload: ChangeListPayloadModel) { }
 }
 
 export class UpdateAction implements Action {
-  readonly type = UPDATE;
+  public readonly type = UPDATE;
 
   constructor(public payload: CardModel) { }
 }

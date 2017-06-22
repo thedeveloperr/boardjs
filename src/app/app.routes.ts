@@ -5,6 +5,6 @@ import { NoContentPageComponent } from './no-content-page';
 import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomePageComponent },
-  { path: '**',    component: NoContentPageComponent },
+    { path: '', component: HomePageComponent },
+    { path: '**', component: NoContentPageComponent },
 ];

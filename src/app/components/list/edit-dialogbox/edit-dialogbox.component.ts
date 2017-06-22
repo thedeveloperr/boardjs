@@ -7,10 +7,11 @@ import { MdDialogRef } from '@angular/material';
   styleUrls: ['./edit-dialogbox.component.css']
 })
 export class EditDialogboxComponent implements OnInit {
-  oldName: string;
+  public oldName: string;
   constructor(public dialogRef: MdDialogRef<EditDialogboxComponent>) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //
   }
 
 }

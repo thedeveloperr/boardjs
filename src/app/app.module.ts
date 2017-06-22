@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
@@ -32,12 +32,17 @@ import { AppState, InternalStateType } from './app.service';
 import { HomePageComponent } from './home-page';
 import { NoContentPageComponent } from './no-content-page';
 import { BoardComponent } from './components/board';
-import { MdCardModule, MdToolbarModule,MdInputModule, MdIconModule, MdDialogModule, MdButtonModule } from '@angular/material';
+import { MdCardModule,
+  MdToolbarModule,
+  MdInputModule,
+  MdIconModule,
+  MdDialogModule,
+  MdButtonModule
+} from '@angular/material';
 import { COMPONENTS, ENTRY_COMPONENTS } from './components';
 import { ListRelatedService } from './services';
 import '../styles/styles.scss';
 import 'hammerjs';
-
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -56,7 +61,7 @@ type StoreType = {
  */
 @NgModule({
   bootstrap: [ AppComponent ],
-  entryComponents:[...ENTRY_COMPONENTS],
+  entryComponents: [...ENTRY_COMPONENTS],
   declarations: [
     AppComponent,
     HomePageComponent,

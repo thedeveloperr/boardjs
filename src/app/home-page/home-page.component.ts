@@ -14,7 +14,8 @@ export class HomePageComponent implements OnInit {
     this.state$ = this._store.select('appState');
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //
   }
 
 }

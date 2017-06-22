@@ -3,7 +3,7 @@ import { MdDialog } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../../reducers';
-import * as listActions from '../../actions/list-actions'
+import * as listActions from '../../actions/list-actions';
 import { DialogboxComponent } from './dialogbox';
 import { ListRelatedService } from '../../services';
 import { ListModel } from '../../models';
@@ -14,32 +14,32 @@ import { ListModel } from '../../models';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  @Input() appState: State = {
+  @Input() public appState: State = {
     board: []
-  }
-  constructor(private _store: Store<State>, public dialog: MdDialog, private _listService: ListRelatedService) {
+  };
 
+  constructor(private _store: Store<State>, public dialog: MdDialog,
+              private _listService: ListRelatedService) {
+    //
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //
   }
 
-  addListDialog() {
+  public addListDialog() {
     let dialogRef = this.dialog.open(DialogboxComponent);
 
-    dialogRef.afterClosed().subscribe(data => {
+    dialogRef.afterClosed().subscribe((data) => {
       if (data) {
-        let id = this._listService.generateId();
+        let listId = this._listService.generateId();
         this._store.dispatch(new listActions.AddAction({
-          id: id,
+          id: listId,
           name: data.name,
           position: 0,
           content: []
         }));
       }
     });
-
   }
-
-
 }

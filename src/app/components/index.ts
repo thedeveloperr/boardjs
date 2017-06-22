@@ -4,7 +4,6 @@ export * from './card';
 
 import * as C from './';
 
-
 export const COMPONENTS = [
   C.DialogboxComponent,
   C.EditDialogboxComponent,
@@ -19,4 +18,4 @@ export const ENTRY_COMPONENTS = [
   C.AddCardDialogboxComponent,
   C.EditDialogboxComponent,
   C.EditCardDialogboxComponent
-]
+];
