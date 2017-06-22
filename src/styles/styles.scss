@@ -6,7 +6,11 @@
 @import 'variables';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import './custom-theme';
 $primary-color : #009688;
 body {
   background-color: $primary-color;
+}
+main{
+  height: 100%;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { State } from '../reducers';
+import { State } from '../../reducers';
 
 @Component({
   selector: 'app-home-page',

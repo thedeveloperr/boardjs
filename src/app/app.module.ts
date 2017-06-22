@@ -29,8 +29,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomePageComponent } from './home-page';
-import { NoContentPageComponent } from './no-content-page';
+import { HomePageComponent } from './pages/home-page';
+import { NoContentPageComponent } from './pages/no-content-page';
 import { BoardComponent } from './components/board';
 import { MdCardModule,
   MdToolbarModule,
@@ -67,7 +67,6 @@ type StoreType = {
     HomePageComponent,
     NoContentPageComponent,
     BoardComponent,
-    HomePageComponent,
     ...COMPONENTS
 ],
   /**
