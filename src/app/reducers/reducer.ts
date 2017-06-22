@@ -2,7 +2,6 @@ import { ListModel } from '../models';
 import * as list from '../actions/list-actions';
 import * as card from '../actions/card-actions';
 
-
 export interface State {
   board: ListModel[];
 };
@@ -55,7 +54,6 @@ export function reducer(state = initialState, action: list.Actions | card.Action
 
     }
     case card.REMOVE: {
-
       return {
         board: state.board.map(list => {
           if (list.id == action.payload.parentId) {

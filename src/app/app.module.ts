@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
@@ -27,12 +29,15 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { NoContentComponent } from './no-content';
-
-
-
+import { HomePageComponent } from './home-page';
+import { NoContentPageComponent } from './no-content-page';
+import { BoardComponent } from './components/board';
+import { MdToolbarModule,MdInputModule, MdIconModule, MdDialogModule, MdButtonModule } from '@angular/material';
+import { COMPONENTS, ENTRY_COMPONENTS } from './components';
+import { ListRelatedService } from './services';
 import '../styles/styles.scss';
+import 'hammerjs';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -51,18 +56,29 @@ type StoreType = {
  */
 @NgModule({
   bootstrap: [ AppComponent ],
+  entryComponents:[...ENTRY_COMPONENTS],
   declarations: [
     AppComponent,
-    HomeComponent,
-    NoContentComponent
-  ],
+    HomePageComponent,
+    NoContentPageComponent,
+    BoardComponent,
+    HomePageComponent,
+    ...COMPONENTS
+],
   /**
    * Import Angular's modules.
    */
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    FlexLayoutModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdDialogModule,
+    MdButtonModule,
+    MdInputModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     StoreModule.provideStore({ appState: reducer })
 
@@ -72,7 +88,8 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    ListRelatedService
   ]
 })
 export class AppModule {
