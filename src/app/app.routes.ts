@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home';
-import { NoContentComponent } from './no-content';
+import { HomePageComponent } from './pages/home-page';
+import { NoContentPageComponent } from './pages/no-content-page';
 
 import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: '**',    component: NoContentComponent },
+    { path: '', component: HomePageComponent },
+    { path: '**', component: NoContentPageComponent },
 ];

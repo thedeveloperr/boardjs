@@ -1,0 +1,14 @@
+.list{
+  display: block;
+  max-height: 100%;
+  width: 300px;
+}
+
+.list-action-btn{
+  min-width: 32px;
+  padding: 0;
+}
+
+.card-wrapper{
+  margin: 5px;
+}

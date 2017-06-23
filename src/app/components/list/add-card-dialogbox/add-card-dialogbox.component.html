@@ -1,0 +1,6 @@
+<md-input-container>
+  <textarea #contentTx mdInput placeholder="Content of your card"></textarea>
+</md-input-container>
+<button md-raised-button (click)="dialogRef.close({content: contentTx.value})">
+ Add card
+</button>

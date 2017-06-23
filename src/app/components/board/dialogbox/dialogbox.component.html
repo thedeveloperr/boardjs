@@ -1,0 +1,6 @@
+<md-input-container>
+  <input #listNameIn mdInput placeholder="Enter Name for list">
+</md-input-container>
+<button md-raised-button (click)="dialogRef.close({name: listNameIn.value})">
+ Add List
+</button>

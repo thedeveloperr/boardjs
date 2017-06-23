@@ -35,6 +35,6 @@ switch (document.readyState) {
 }
 
 function _domReadyHandler() {
- document.removeEventListener('DOMContentLoaded', _domReadyHandler, false);
- main();
+  document.removeEventListener('DOMContentLoaded', _domReadyHandler, false);
+  main();
 }

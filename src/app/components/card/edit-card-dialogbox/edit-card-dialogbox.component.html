@@ -1,0 +1,7 @@
+<md-input-container>
+  <textarea #contentTx mdInput mdTextareaAutosize placeholder="Content of your card" [value]=oldContent></textarea>
+</md-input-container>
+
+<button md-raised-button (click)="dialogRef.close({content: contentTx.value})">
+ Update card
+</button>

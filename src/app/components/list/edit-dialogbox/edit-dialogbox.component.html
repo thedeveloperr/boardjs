@@ -1,0 +1,7 @@
+<md-input-container>
+  <input #listNameIn mdInput mdTextareaAutosize placeholder="Enter new name for list" [value]="oldName">
+</md-input-container>
+
+<button md-raised-button (click)="dialogRef.close({newName: listNameIn.value})">
+ Update List
+</button>
