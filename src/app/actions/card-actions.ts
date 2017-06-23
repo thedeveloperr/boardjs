@@ -17,6 +17,7 @@ export interface RemoveActionPayloadModel {
   parentId: string;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class RemoveAction implements Action {
   public readonly type = REMOVE;
 
@@ -35,18 +36,21 @@ export interface ChangeListPayloadModel {
   newParentId: string;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class ChangePositionAction implements Action {
   public readonly type = CHANGE_POSITION;
 
   constructor(public payload: ChangePositionPayloadModel) { }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class ChangeListAction implements Action {
   public readonly type = CHANGE_LIST;
 
   constructor(public payload: ChangeListPayloadModel) { }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class UpdateAction implements Action {
   public readonly type = UPDATE;
 
