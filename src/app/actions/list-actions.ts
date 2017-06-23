@@ -11,6 +11,7 @@ export class AddAction implements Action {
   constructor(public payload: ListModel) { }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class RemoveAction implements Action {
   public readonly type = REMOVE;
 
@@ -22,12 +23,14 @@ export interface ChangePositionPayloadModel {
   newPosition: number;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class ChangePositionAction implements Action {
   public readonly type = CHANGE_POSITION;
 
   constructor(public payload: ChangePositionPayloadModel) { }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class UpdateAction implements Action {
   public readonly type = UPDATE;
 
