@@ -65,7 +65,7 @@ dll/
 *.swp
 
 # VS code #
-.vscode
+.vscode/
 
 # Angular #
 *.ngfactory.ts
